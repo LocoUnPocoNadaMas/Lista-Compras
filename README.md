@@ -6,7 +6,7 @@
 
 [Introducción](#_heading=h.z337ya)
 
-[Propósito](#_heading=h.3j2qqm3)
+[Propósito](#propósito)
 
 [Alcance](#_heading=h.4i7ojhp)
 
@@ -104,9 +104,9 @@
 
 # [Visión](#bookmark=id.30j0zll)
 
-## [Introducción](#bookmark=id.30j0zll)
+## Introducción
 
-### Propósito
+## Propósito
 
 El sistema planteado se basa en optimizar el tiempo al realizar la lista de compras las cuales conllevan un tiempo bastante considerable porque implican un control de los productos faltantes únicamente por parte del Rol Mamá. Permitiremos que el Rol Hijo pueda crear una Lista de Productos para minimizar el tiempo. 
 
@@ -127,34 +127,35 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 ## [Orientación](#bookmark=id.30j0zll)
 
 ### Descripción del Problema / Oportunidad
-| El problema / oportunidad    	| −Demoras al agregar los productos necesarios y   detectar en donde se compran a menor precio.                                                                     	|
-|------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Afecta a                     	| −Rol Hijo y Madre.                                                                                                                   	|
-|                              	| −La oportunidad estará afectando de manera directa al conjunto familiar, ya que se puede producir una gran pérdida de tiempo creando la lista de compras. 	|
-| Una adecuada solución sería  	| −Sistema de Lista de Compras.                                                                                                              	|
-| El impacto / beneficio sería 	| −Facilita el agregado de productos gracias a una IA que analizara las fotos de estos.                                                                                                                	|
-|                              	| −Minimizamos el factor de error humano.                                                                                                                    	|
-|                              	| −Reducimos el tiempo de creación de la lista de compras.                                                                                                                       	|
-|                              	| −Minimizamos el gasto al llevar un registro de precios.                                                                                                                       	|
+
+| El problema / oportunidad    | −Demoras al agregar los productos necesarios y   detectar en donde se compran a menor precio.                                                             |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Afecta a                     | −Rol Hijo y Madre.                                                                                                                                        |
+|                              | −La oportunidad estará afectando de manera directa al conjunto familiar, ya que se puede producir una gran pérdida de tiempo creando la lista de compras. |
+| Una adecuada solución sería  | −Sistema de Lista de Compras.                                                                                                                             |
+| El impacto / beneficio sería | −Facilita el agregado de productos gracias a una IA que analizara las fotos de estos.                                                                     |
+|                              | −Minimizamos el factor de error humano.                                                                                                                   |
+|                              | −Reducimos el tiempo de creación de la lista de compras.                                                                                                  |
+|                              | −Minimizamos el gasto al llevar un registro de precios.                                                                                                   |
 
 ## [Descripción del personal involucrado [Stakeholders]](#bookmark=id.30j0zll)
 
 ### Resumen del personal involucrado (No usuarios)
 
-| Descripción                         	| Responsabilidades                                                                     	|
-|-------------------------------------	|---------------------------------------------------------------------------------------	|
-| Analista en Sistemas de Información 	| Es el encargado de realizar todo el análisis y diseño.                                	|
-| Programador Full-Stack              	| Desarrolla todo el software.                                                          	|
-| Técnico                             	| Se encargará del soporte.                                                             	|
-| Tester                              	| Se encarga de encontrar errores desde el análisis hasta la implementación             	|
-| Científico de Datos                 	| Se encarga de crear la IA de procesamiento de fotos para facilitar la carga de datos. 	|
+| Descripción                         | Responsabilidades                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------------- |
+| Analista en Sistemas de Información | Es el encargado de realizar todo el análisis y diseño.                                |
+| Programador Full-Stack              | Desarrolla todo el software.                                                          |
+| Técnico                             | Se encargará del soporte.                                                             |
+| Tester                              | Se encarga de encontrar errores desde el análisis hasta la implementación             |
+| Científico de Datos                 | Se encarga de crear la IA de procesamiento de fotos para facilitar la carga de datos. |
 
 ### [Resumen de Usuarios](#bookmark=id.30j0zll)
 
-|          	| Nombre    	| Descripción                                                   	|
-|----------	|-----------	|---------------------------------------------------------------	|
-| Directos 	| Rol Hijo  	| Cargan en el software los datos de los productos faltantes.   	|
-|          	| Rol Madre 	| Utiliza la lista de compras creada para realizar las compras. 	|
+|          | Nombre    | Descripción                                                   |
+| -------- | --------- | ------------------------------------------------------------- |
+| Directos | Rol Hijo  | Cargan en el software los datos de los productos faltantes.   |
+|          | Rol Madre | Utiliza la lista de compras creada para realizar las compras. |
 
 ## [Visión general del producto [Sistema de información]](#bookmark=id.30j0zll)
 
@@ -173,13 +174,15 @@ El sistema logra aumentar el flujo de trabajo dentro del grupo familiar debido a
 # Especificación Complementaria
 
 ## [Reglas del dominio – [Reglas de negocio]](#bookmark=id.30j0zll)
-|     Id  	|     Regla                                                     	|     Grado de variación                                                      	|     Origen              	|
-|---------	|---------------------------------------------------------------	|-----------------------------------------------------------------------------	|-------------------------	|
-| Regla 1 	| El sistema trabaja bajo precios cotizados en pesos argentino. 	| ALTO.   El precio de los productos varía en base a la cotización del dólar. 	| Políticas del gobierno. 	|
-| Regla 2 	| Se requiere una conexión a internet estable.                  	| MEDIO. El servicio de internet puede variar.                                	| Política del sistema.   	|
-| Regla 3 	| Se debe ingresar una contraseña para acceder al sistema.      	| BAJO. La contraseña es proporcionada por el encargado del sistema (Mamá).               	| Política del sistema.   	|
+
+| Id      | Regla                                                         | Grado de variación                                                          | Origen                  |
+| ------- | ------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------- |
+| Regla 1 | El sistema trabaja bajo precios cotizados en pesos argentino. | ALTO.   El precio de los productos varía en base a la cotización del dólar. | Políticas del gobierno. |
+| Regla 2 | Se requiere una conexión a internet estable.                  | MEDIO. El servicio de internet puede variar.                                | Política del sistema.   |
+| Regla 3 | Se debe ingresar una contraseña para acceder al sistema.      | BAJO. La contraseña es proporcionada por el encargado del sistema (Mamá).   | Política del sistema.   |
 
 ## [Información en dominio de interés](#bookmark=id.30j0zll)
+
 ```mermaid
 graph TD
     subgraph Hijo
@@ -215,7 +218,6 @@ Editar Faltantes: el Rol Mamá puede modificar los productos, la lista de produc
 
 Comprar Faltantes: una vez comprados el Rol Mamá puede limpiar la lista de productos faltantes, estos se almacenaran en un registro.
 
-
 # Viabilidad
 
 ## [Viabilidad técnica](#bookmark=id.30j0zll)
@@ -224,67 +226,66 @@ Comprar Faltantes: una vez comprados el Rol Mamá puede limpiar la lista de prod
 
 **Especificación de los recursos Hardware**
 
-| Especificación de los recursos  	| De Hardware      	|
-|---------------------------------	|------------------	|
-| Tecnologías de Entrada de datos 	| Telefono, PC     	|
-| Tecnologías de Salida           	| Telefono, PC     	|
-| Tecnologías de Procesamiento    	| Telefono, PC     	|
-| Tecnologías de Almacenamiento   	| Nube AWS         	|
-| Tecnologías de Comunicaciones   	| WiFi, 3G, 4G, 5G 	|
+| Especificación de los recursos  | De Hardware      |
+| ------------------------------- | ---------------- |
+| Tecnologías de Entrada de datos | Telefono, PC     |
+| Tecnologías de Salida           | Telefono, PC     |
+| Tecnologías de Procesamiento    | Telefono, PC     |
+| Tecnologías de Almacenamiento   | Nube AWS         |
+| Tecnologías de Comunicaciones   | WiFi, 3G, 4G, 5G |
 
 ### Recursos de Software
 
 **Especificación de los recursos de Software**
 
-
-| Especificación de los recursos 	| De software                                    	|
-|--------------------------------	|------------------------------------------------	|
-| Sistema operativo              	| Windows 10, Red Hat 8.5, Android 5 o posterior 	|
-| Lenguaje de programación       	| Java 11, MySQL 8                               	|
-| IDE                            	| NetBeans, Android Studio, MySQL Workbench      	|
-| Base de Datos                  	| MySQL 8.0.2x                                   	|
+| Especificación de los recursos | De software                                    |
+| ------------------------------ | ---------------------------------------------- |
+| Sistema operativo              | Windows 10, Red Hat 8.5, Android 5 o posterior |
+| Lenguaje de programación       | Java 11, MySQL 8                               |
+| IDE                            | NetBeans, Android Studio, MySQL Workbench      |
+| Base de Datos                  | MySQL 8.0.2x                                   |
 
 ## [Viabilidad económica](#bookmark=id.30j0zll)
 
 ### Estimación de Costos Hardware
 
-|     Recursos   de Hardware                                                 	|     Costos ($)    	|     Proveedor    	|     Garantía / Soporte    	|
-|----------------------------------------------------------------------------	|-------------------	|------------------	|---------------------------	|
-|     →          Tecnologías de Entrada                                      	|                   	|                  	|                           	|
-|     →          Tecnologías de Salida                                       	|                   	|                  	|                           	|
-|     →          Tecnologías de Procesamiento   Telefono Celular mod. A10    	|     $ 40.000      	|     Samsung      	|     1 año de garantía     	|
-|     →          Tecnologías de Almacenamiento   Nube AWS                    	|     $ 18.934      	|     Amazon       	|     1 año de soporte     	|
-|     →          Tecnologías de Comunicaciones   WiFi, 3G, 4G, 5G            	|     $ 17.280      	|     Claro        	|     1 año de soporte     	|
-|     Costo Total                                                            	|     $ 76.214      	|                  	|                           	|
+| Recursos   de Hardware                                              | Costos ($) | Proveedor | Garantía / Soporte |
+| ------------------------------------------------------------------- | ---------- | --------- | ------------------ |
+| →          Tecnologías de Entrada                                   |            |           |                    |
+| →          Tecnologías de Salida                                    |            |           |                    |
+| →          Tecnologías de Procesamiento   Telefono Celular mod. A10 | $ 40.000   | Samsung   | 1 año de garantía  |
+| →          Tecnologías de Almacenamiento   Nube AWS                 | $ 18.934   | Amazon    | 1 año de soporte   |
+| →          Tecnologías de Comunicaciones   WiFi, 3G, 4G, 5G         | $ 17.280   | Claro     | 1 año de soporte   |
+| Costo Total                                                         | $ 76.214   |           |                    |
 
 ### Estimación de Costos del Software a adquirir
 
-|      Software                          	|     Licencia   ($)    	|     Cantidad    	|     Tiempo    	|
-|----------------------------------------	|-----------------------	|-----------------	|---------------	|
-|               Sistema operativo        	|                       	|                 	|               	|
-|               Lenguaje de programación 	|                       	|                 	|               	|
-|               Antivirus                	|                       	|                 	|               	|
-|     Costo Total                        	|                       	|                 	|               	|
+| Software                 | Licencia   ($) | Cantidad | Tiempo |
+| ------------------------ | -------------- | -------- | ------ |
+| Sistema operativo        |                |          |        |
+| Lenguaje de programación |                |          |        |
+| Antivirus                |                |          |        |
+| Costo Total              |                |          |        |
 
 ### Estimación de Costos de desarrollo
 
-|                  Desarrollo e   implantación del Sistema de Información    	|     Costo    	|     Tiempo    	|
-|----------------------------------------------------------------------------	|--------------	|---------------	|
-|     Costo Total                                                            	|     $50.000  	|     1 mes     	|
+| Desarrollo e   implantación del Sistema de Información | Costo   | Tiempo |
+| ------------------------------------------------------ | ------- | ------ |
+| Costo Total                                            | $50.000 | 1 mes  |
 
 ### Estimación de Costos del personal
 
-|      Equipo de Desarrollo                                 	|     Costos   	|     Cantidad 	|     Tiempo   	|
-|-----------------------------------------------------------	|--------------	|--------------	|--------------	|
-|   *  Gestor   del proyecto                                 	|              	|              	|              	|
-|                      Ingeniero en Sistemas de Información 	|              	|              	|              	|
-|                      Analistas de Sistemas                	|      120.000 	|      1       	|      1 mes   	|
-|                      Programadores                        	|      90.000  	|      1       	|      1 mes   	|
-|                      Tester                                                    	|      70.000 	|      1       	|      1 mes 	|
-|                      Técnico en Ciencia de Datos          	|      100.000 	|      1       	|      1 mes 	|
-|   *  Usuarios   Finales                                    	|              	|              	|              	|
-|                      Usuarios del sistema de información  	|              	|              	|              	|
-|    ** Costo   Total                                         	|      380.000 	|      4       	|     1 mes  	|
+| Equipo de Desarrollo                 | Costos  | Cantidad | Tiempo |
+| ------------------------------------ | ------- | -------- | ------ |
+| *  Gestor   del proyecto             |         |          |        |
+| Ingeniero en Sistemas de Información |         |          |        |
+| Analistas de Sistemas                | 120.000 | 1        | 1 mes  |
+| Programadores                        | 90.000  | 1        | 1 mes  |
+| Tester                               | 70.000  | 1        | 1 mes  |
+| Técnico en Ciencia de Datos          | 100.000 | 1        | 1 mes  |
+| *  Usuarios   Finales                |         |          |        |
+| Usuarios del sistema de información  |         |          |        |
+| ** Costo   Total                     | 380.000 | 4        | 1 mes  |
 
 ## [Viabilidad operacional](#bookmark=id.30j0zll)
 
@@ -294,43 +295,43 @@ Teniendo en cuenta los resultados de las entrevistas se detectó que los usuario
 
 ### Estudio de Riesgos del proyecto
 
-|  Tipo de Riesgo 	|  Posible riesgo                                                                                                            	|
-|-----------------	|----------------------------------------------------------------------------------------------------------------------------	|
-| Tecnológico     	| Falla en la conexión a Internet, mantenimiento del servicio en la nube, error en la implementación, actualización fallida. 	|
-| Personal        	| El personal clave está enfermo.                                                                                            	|
-| Organizacional  	| Mala comunicación.                                                                                                         	|
-| Requerimientos  	| Cambio de requerimientos que solicita el cliente, provocando el rediseño del sistema.                                      	|
-| Herramientas    	| Las herramientas de software no pueden trabajar en una forma integrada.                                                    	|
+| Tipo de Riesgo | Posible riesgo                                                                                                             |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Tecnológico    | Falla en la conexión a Internet, mantenimiento del servicio en la nube, error en la implementación, actualización fallida. |
+| Personal       | El personal clave está enfermo.                                                                                            |
+| Organizacional | Mala comunicación.                                                                                                         |
+| Requerimientos | Cambio de requerimientos que solicita el cliente, provocando el rediseño del sistema.                                      |
+| Herramientas   | Las herramientas de software no pueden trabajar en una forma integrada.                                                    |
 
 ### Calendario del proyecto – Diagrama de Gantt
 
 Falta
-  
 
 ## [Marco de desarrollo](#bookmark=id.30j0zll)
 
 Para el modelo de proceso unificado, el marco de desarrollo es el siguiente:
 
 Referencias: **c**= comenzar, **r** = refinar
-|  Disciplinas         	|  Artefactos /   Fases         	|  Inicio 	|  Elaboración 	|
-|----------------------	|-------------------------------	|---------	|--------------	|
-| Modelado del negocio 	| Modelo del dominio            	|         	| c            	|
-| Requisitos           	| Modelo de caso de usos        	| c       	| r            	|
-|           "          	| Visión                        	| c       	| r            	|
-|           "          	| Especificación complementaria 	| c       	| r            	|
-|           "          	| Glosario                      	| c       	| r            	|
-| Análisis y diseño    	| Modelo del análisis           	|         	| c            	|
-| Implementación       	| Modelo de implementación      	|         	| c            	|
-| Gestión de proyecto  	| Plan de desarrollo            	| c       	| r            	|
-|           "          	| Informe de viabilidad         	| c       	| r            	|
-| Pruebas              	| Modelo de Prueba              	|         	| c            	|
-| Entorno              	| Marco de Desarrollo           	| c       	| r            	|
+|  Disciplinas             |  Artefactos /   Fases             |  Inicio     |  Elaboración     |
+|----------------------    |-------------------------------    |---------    |--------------    |
+| Modelado del negocio     | Modelo del dominio                |             | c                |
+| Requisitos               | Modelo de caso de usos            | c           | r                |
+|           "              | Visión                            | c           | r                |
+|           "              | Especificación complementaria     | c           | r                |
+|           "              | Glosario                          | c           | r                |
+| Análisis y diseño        | Modelo del análisis               |             | c                |
+| Implementación           | Modelo de implementación          |             | c                |
+| Gestión de proyecto      | Plan de desarrollo                | c           | r                |
+|           "              | Informe de viabilidad             | c           | r                |
+| Pruebas                  | Modelo de Prueba                  |             | c                |
+| Entorno                  | Marco de Desarrollo               | c           | r                |
 
 ## [Requisitos](#bookmark=id.30j0zll)
 
 ### [Modelo de Casos de Usos](#bookmark=id.30j0zll)
 
 #### [Diagrama](#bookmark=id.30j0zll)
+
 ```mermaid
 flowchart  LR
 subgraph Caso de Uso Lista de Compras
@@ -347,7 +348,9 @@ m-->  c
 m-->  d
 m-->  e
 ```
+
 #### [Textos](#bookmark=id.30j0zll)
+
 ##### Caso De Uso Acceder al Sistema
 
 *Actor principal:* Hijo/Madre.
@@ -355,35 +358,39 @@ m-->  e
 *Precondiciones:* El sistema espera que el Hijo inicie sesión con los datos provistos por la Madre.
 *Postcondiciones:* Sesión iniciada.
 *Escenario principal de éxito:*
-|     Acción del Actor (o   intención)                 	|     Responsabilidad del Sistema                     	|
-|------------------------------------------------------	|-----------------------------------------------------	|
-| 1. El usuario ingresa sus datos de identificación.      	| 2. El sistema comprueba el usuario y contraseña.       	|
-|                                                    	| 3. Iniciar sesión.                                     	|
+|     Acción del Actor (o   intención)                     |     Responsabilidad del Sistema                         |
+|------------------------------------------------------    |-----------------------------------------------------    |
+| 1. El usuario ingresa sus datos de identificación.          | 2. El sistema comprueba el usuario y contraseña.           |
+|                                                        | 3. Iniciar sesión.                                         |
 
 *Extensiones:*
 
- 1. Error: el usuario no puede ingresar sus datos por problemas de
-    hardware. Solución: Comunicarse con el técnico.
-    
- 2. a) Usuario inexistente. Solución: Comunicarse con el técnico para
-        generar nuevo usuario. 
-     b) Contraseña Incorrecta. Solución: Comunicarse
-        con el técnico para restablecer contraseña.
+1. Error: el usuario no puede ingresar sus datos por problemas de
+   hardware. Solución: Comunicarse con el técnico.
+
+2. a) Usuario inexistente. Solución: Comunicarse con el técnico para
+   
+       generar nuevo usuario. 
+   
+    b) Contraseña Incorrecta. Solución: Comunicarse
+   
+       con el técnico para restablecer contraseña.
 
 *Tecnologías:* celular con so Android 5 o posterior.
 *Frecuencia:* diario
 Cuestiones abiertas: -.
 
 ##### Caso De Uso Agregar Faltantes
+
 *Actor principal:* Hijo.
 *Personas involucradas:* .
 *Precondiciones:* Que el Hijo haya iniciado sesión y que la base de datos este creada y en línea.
 *Postcondiciones:* Carga de los productos faltantes.
 *Escenario principal de éxito:* 
-| Acción del Actor (o intención)             	| Responsabilidad del Sistema                     	|
-|--------------------------------------------	|-------------------------------------------------	|
-| 1. El usuario ingresa los productos faltantes. 	| 2. El sistema verifica la integridad de los datos. 	|
-|                                            	| 3. El sistema carga los productos faltantes.              	|
+| Acción del Actor (o intención)                 | Responsabilidad del Sistema                         |
+|--------------------------------------------    |-------------------------------------------------    |
+| 1. El usuario ingresa los productos faltantes.     | 2. El sistema verifica la integridad de los datos.     |
+|                                                | 3. El sistema carga los productos faltantes.                  |
 
 *Extensiones:*
 
@@ -394,16 +401,17 @@ Cuestiones abiertas: -.
 *Cuestiones abiertas:* -.
 
 ##### Caso De Uso Ver Faltantes
+
 *Actor principal:* Hijo, Madre.
 *Personas involucradas:* .
 *Precondiciones:* Que el Hijo haya iniciado sesión y que haya una Lista de Compras creada y en línea.
 *Postcondiciones:* visión de la Lista de Productos faltantes con sus precios mas bajos de acuerdo a los últimos registros.
 *Escenario principal de éxito:* 
-| Acción del Actor (o intención)             	| Responsabilidad del Sistema                     	|
-|--------------------------------------------	|-------------------------------------------------	|
-| 1. El usuario selecciona ver productos faltantes. 	| 2. El sistema verifica los productos agregados a la Lista de Productos.              	|
-|                                            	| 3. El sistema calcula el menor precio de los productos faltantes.              	|
-|                                            	| 4. El sistema exhibe los productos faltantes.              	|
+| Acción del Actor (o intención)                 | Responsabilidad del Sistema                         |
+|--------------------------------------------    |-------------------------------------------------    |
+| 1. El usuario selecciona ver productos faltantes.     | 2. El sistema verifica los productos agregados a la Lista de Productos.                  |
+|                                                | 3. El sistema calcula el menor precio de los productos faltantes.                  |
+|                                                | 4. El sistema exhibe los productos faltantes.                  |
 
 *Extensiones:*
 
@@ -415,16 +423,17 @@ Cuestiones abiertas: -.
 *Cuestiones abiertas:* -.
 
 ##### Caso De Uso Editar Faltantes
+
 *Actor principal:* Madre.
 *Personas involucradas:* .
 *Precondiciones:* Que Madre haya iniciado sesión y que haya una Lista de Compras creada y en línea.
 *Postcondiciones:* visión de la pantalla de edición de Lista de Productos faltantes.
 *Escenario principal de éxito:* 
-| Acción del Actor (o intención)             	| Responsabilidad del Sistema                     	|
-|--------------------------------------------	|-------------------------------------------------	|
-| 1. El usuario selecciona la Lista de Productos para editar. 	| 2. El sistema verifica los productos agregados a la Lista de Productos.              	|
-|                                            	| 3. El sistema exhibe los productos faltantes.              	|
-|  4. El usuario modifica la Lista de Productos. | 5. El sistema actualiza la Lista de Productos.              	|
+| Acción del Actor (o intención)                 | Responsabilidad del Sistema                         |
+|--------------------------------------------    |-------------------------------------------------    |
+| 1. El usuario selecciona la Lista de Productos para editar.     | 2. El sistema verifica los productos agregados a la Lista de Productos.                  |
+|                                                | 3. El sistema exhibe los productos faltantes.                  |
+|  4. El usuario modifica la Lista de Productos. | 5. El sistema actualiza la Lista de Productos.                  |
 
 *Extensiones:*
 
@@ -434,16 +443,18 @@ Cuestiones abiertas: -.
 *Tecnologías:* celular con so Android 5 o posterior.
 *Frecuencia:* diario.
 *Cuestiones abiertas:* -.
+
 ##### Caso De Uso Quitar Faltantes
+
 *Actor principal:* Madre.
 *Personas involucradas:* .
 *Precondiciones:* Que Madre haya iniciado sesión y que haya una Lista de Compras creada y en línea.
 *Postcondiciones:* visión de la pantalla de Finalización de Compra.
 *Escenario principal de éxito:* 
-| Acción del Actor (o intención)             	| Responsabilidad del Sistema                     	|
-|--------------------------------------------	|-------------------------------------------------	|
-| 1. El usuario selecciona los productos comprados. 	| 2. El sistema verifica los productos de la Lista de Productos.              	|
-|                                            	| 3. El sistema actualiza el Registro de compras y quita los productos seleccionados de la Lista de Compras.              	|
+| Acción del Actor (o intención)                 | Responsabilidad del Sistema                         |
+|--------------------------------------------    |-------------------------------------------------    |
+| 1. El usuario selecciona los productos comprados.     | 2. El sistema verifica los productos de la Lista de Productos.                  |
+|                                                | 3. El sistema actualiza el Registro de compras y quita los productos seleccionados de la Lista de Compras.                  |
 
 *Extensiones:*
 
@@ -456,7 +467,6 @@ Cuestiones abiertas: -.
 ## [Modelado del Negocio](#bookmark=id.30j0zll)
 
 ### [Modelo del Dominio](#bookmark=id.30j0zll)
-
 
 ```mermaid
 classDiagram
@@ -523,7 +533,6 @@ class  Madre{
 ## [Análisis y Diseño](#bookmark=id.30j0zll)
 
 ### [Modelo del Análisis](#bookmark=id.30j0zll)
-
 
 [Diagramas de Secuencias del Sistema](#bookmark=id.30j0zll)
 
