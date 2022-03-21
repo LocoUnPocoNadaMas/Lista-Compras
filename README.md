@@ -2,107 +2,93 @@
 
 ## Contenido
 
-[Visión](#_heading=h.2jxsxqh)
+[Visión](#visión)
 
-[Introducción](#_heading=h.z337ya)
+[Introducción](#introducción)
 
 [Propósito](#propósito)
 
-[Alcance](#_heading=h.4i7ojhp)
+[Alcance](#alcance)
 
-[Definiciones, Acrónimos, y Abreviaciones](#_heading=h.2xcytpi)
+[Definiciones, Acrónimos, y Abreviaciones](#definiciones,-acrónimos,-y-abreviaciones)
 
-[Referencias – [Otros documentos]  16](#_heading=h.1ci93xb)
+[Orientación](#orientación)
 
-[Orientación](#_heading=h.2bn6wsx)
+[Descripción del Problema / Oportunidad](#descripción-del-problema--oportunidad)
 
-[Descripción del Problema / Oportunidad](#_heading=h.qsh70q)
+[Descripción del personal involucrado [Stakeholders]](#descripción-del-personal-involucrado-stakeholders)
 
-[Descripción del personal involucrado [Stakeholders]  17](#_heading=h.2p2csry)
+[Resumen del personal involucrado (No usuarios)](#resumen-del-personal-involucrado-no-usuarios)
 
-[Resumen del personal involucrado (No usuarios)](#_heading=h.3o7alnk)
+[Resumen de Usuarios](#resumen-de-usuarios)
 
-[Resumen de Usuarios](#_heading=h.23ckvvd)
+[Visión general del producto [Sistema de información]](#visión-general-del-producto-sistema-de-información)
 
-[Visión general del producto [Sistema de información]  18](#_heading=h.ihv636)
+[Diagrama de Bloques](#diagrama-de-bloques)
 
-[Diagrama de Bloques](#_heading=h.1hmsyys)
+[Resumen de las características del Sistema de Información](#resumen-de-las-características-del-sistema-de-información)
 
-[Resumen de las características del Sistema de Información](#_heading=h.41mghml)
+[Práctico](#práctico)
 
-[Práctico](#_heading=h.2grqrue)
+[Eficiente](#eficiente)
 
-[Eficiente](#_heading=h.vx1227)
+[Especificación Complementaria](#especificación-complementaria)
 
-[Especificación Complementaria](#_heading=h.4f1mdlm)
+[Reglas del dominio – [Reglas de negocio]](#reglas-del-dominio--reglas-de-negocio)
 
-[Introducción](#_heading=h.2u6wntf)
+[Información en dominio de interés](#información-en-dominio-de-interés)
 
-[Propósito](#_heading=h.19c6y18)
+[Descripción del Proceso](#descripción-del-proceso)
 
-[Alcance](#_heading=h.28h4qwu)
+[Viabilidad](#viabilidad)
 
-[Referencias – [Otros documentos]  21](#_heading=h.nmf14n)
+[Viabilidad Técnica](#viabilidad-técnica)
 
-[Reglas del dominio – [Reglas de negocio]  21](#_heading=h.46r0co2)
+[Recursos de Hardware](#recursos-de-hardware)
 
-[Información en dominio de interés](#_heading=h.111kx3o)
+[Recursos de Software](#recursos-de-software)
 
-[Descripción del Proceso](#_heading=h.3l18frh)
+[Viabilidad económica](#viabilidad-económica)
 
-[Viabilidad](#_heading=h.2dlolyb)
+[Estimación de Costos Hardware](#estimación-de-costos-hardware)
 
-[Viabilidad Técnica](#_heading=h.sqyw64)
+[Estimación de Costos del Software a adquirir](#estimación-de-costos-del-software-a-adquirir)
 
-[Recursos de Hardware](#_heading=h.3cqmetx)
+[Estimación de Costos de desarrollo](#estimación-de-costos-de-desarrollo)
 
-[Recursos de Software](#_heading=h.1rvwp1q)
+[Estimación de Costos del personal](#estimación-de-costos-del-personal)
 
-[Viabilidad económica](#_heading=h.4bvk7pj)
+[Viabilidad operacional](#viabilidad-operacional)
 
-[Estimación de Costos Hardware](#_heading=h.2r0uhxc)
+[Gestión del Proyecto](#gestión-del-proyecto)
 
-[Estimación de Costos del Software a adquirir](#_heading=h.1664s55)
+[Estudio de Riesgos del proyecto](#estudio-de-riesgos-del-proyecto)
 
-[Estimación de Costos de desarrollo](#_heading=h.3q5sasy)
+[Calendario del proyecto – Diagrama de Gantt](#calendario-del-proyecto--diagrama-de-gantt)
 
-[Estimación de Costos del personal](#_heading=h.25b2l0r)
+[Marco de desarrollo](#marco-de-desarrollo)
 
-[Viabilidad operacional](#_heading=h.kgcv8k)
+[Requisitos](#requisitos)
 
-[Gestión del Proyecto](#_heading=h.34g0dwd)
+[Modelo de Casos de Usos](#modelo-de-casos-de-usos)
 
-[Estudio de Riesgos del proyecto](#_heading=h.1jlao46)
+[Modelado del Negocio](#modelado-del-negocio)
 
-[Calendario del proyecto – Diagrama de Gantt](#_heading=h.43ky6rz)
+[Modelo del Dominio](#modelo-del-dominio)
 
-[Marco de desarrollo](#_heading=h.2iq8gzs)
+[Análisis y Diseño](#análisis-y-diseño)
 
-[Requisitos](#_heading=h.1baon6m)
+[Modelo del Análisis](#modelo-del-análisis)
 
-[Visión](#_heading=h.3vac5uf)
+[Diagramas de Secuencias del Sistema](#diagramas-de-secuencias-del-sistema)
 
-[Especificación Complementaria](#_heading=h.2afmg28)
+[Contratos](#contratos)
 
-[Modelo de Casos de Usos](#_heading=h.pkwqa1)
+[Prototipos](#prototipos)
 
-[Modelado del Negocio](#_heading=h.2nusc19)
+[Prototipos No Operacionales](#prototipos-no-operacionales)
 
-[Modelo del Dominio](#_heading=h.1302m92)
-
-[Análisis y Diseño](#_heading=h.3mzq4wv)
-
-[Modelo del Análisis](#_heading=h.2250f4o)
-
-[Diagramas de Secuencias del Sistema](#_heading=h.haapch)
-
-[Contratos](#_heading=h.319y80a)
-
-[Prototipos](#_heading=h.40ew0vw)
-
-[Prototipos No Operacionales](#_heading=h.2fk6b3p)
-
-# [Visión](#bookmark=id.30j0zll)
+# [Visión](#contenido)
 
 ## Introducción
 
@@ -124,7 +110,7 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 **Rol Mamá:** Se utiliza para facilitar la visualización del problema. Es un perfil de administrador encargado de la configuración total.
 **Rol Hijo:** Expone un perfil de acceso limitado al sistema que solo puede crear una lista de productos.
 
-## [Orientación](#bookmark=id.30j0zll)
+## [Orientación](#contenido)
 
 ### Descripción del Problema / Oportunidad
 
@@ -138,7 +124,7 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 |                              | −Reducimos el tiempo de creación de la lista de compras.                                                                                                  |
 |                              | −Minimizamos el gasto al llevar un registro de precios.                                                                                                   |
 
-## [Descripción del personal involucrado [Stakeholders]](#bookmark=id.30j0zll)
+## [Descripción del personal involucrado [Stakeholders]](#contenido)
 
 ### Resumen del personal involucrado (No usuarios)
 
@@ -150,18 +136,20 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 | Tester                              | Se encarga de encontrar errores desde el análisis hasta la implementación             |
 | Científico de Datos                 | Se encarga de crear la IA de procesamiento de fotos para facilitar la carga de datos. |
 
-### [Resumen de Usuarios](#bookmark=id.30j0zll)
+### Resumen de Usuarios
 
 |          | Nombre    | Descripción                                                   |
 | -------- | --------- | ------------------------------------------------------------- |
 | Directos | Rol Hijo  | Cargan en el software los datos de los productos faltantes.   |
 |          | Rol Madre | Utiliza la lista de compras creada para realizar las compras. |
 
-## [Visión general del producto [Sistema de información]](#bookmark=id.30j0zll)
+## [Visión general del producto [Sistema de información]](#contenido)
 
-### [Diagrama de Bloques](#bookmark=id.30j0zll)
+### Diagrama de Bloques
 
 Falta
+
+## [Resumen de las características del Sistema de Información](#contenido)
 
 ### Práctico
 
@@ -171,9 +159,9 @@ Al abrir el software se encuentran claras indicaciones de forma de uso. Con tan 
 
 El sistema logra aumentar el flujo de trabajo dentro del grupo familiar debido a su rapidez ya que quita trabajo extra a los encargados de las compras.
 
-# Especificación Complementaria
+# [Especificación Complementaria](#contenido)
 
-## [Reglas del dominio – [Reglas de negocio]](#bookmark=id.30j0zll)
+## [Reglas del dominio – [Reglas de negocio]](#contenido)
 
 | Id      | Regla                                                         | Grado de variación                                                          | Origen                  |
 | ------- | ------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------- |
@@ -181,7 +169,7 @@ El sistema logra aumentar el flujo de trabajo dentro del grupo familiar debido a
 | Regla 2 | Se requiere una conexión a internet estable.                  | MEDIO. El servicio de internet puede variar.                                | Política del sistema.   |
 | Regla 3 | Se debe ingresar una contraseña para acceder al sistema.      | BAJO. La contraseña es proporcionada por el encargado del sistema (Mamá).   | Política del sistema.   |
 
-## [Información en dominio de interés](#bookmark=id.30j0zll)
+## [Información en dominio de interés](#contenido)
 
 ```mermaid
 graph TD
@@ -206,7 +194,7 @@ graph TD
     end
 ```
 
-### [Descripción del Proceso](#bookmark=id.30j0zll)
+### [Descripción del Proceso](#contenido)
 
 Acceder al sistema: el Rol Mamá tiene que ingresar al sistema creando por unica vez una contraseña. Luego debe agregar el Rol Hijo para permitir a otros usuarios usar el sistema administrándoles credenciales de acceso. El Rol Hijo accede con esas credenciales creadas por Rol Mamá.
 
@@ -218,9 +206,9 @@ Editar Faltantes: el Rol Mamá puede modificar los productos, la lista de produc
 
 Comprar Faltantes: una vez comprados el Rol Mamá puede limpiar la lista de productos faltantes, estos se almacenaran en un registro.
 
-# Viabilidad
+# [Viabilidad](#contenido)
 
-## [Viabilidad técnica](#bookmark=id.30j0zll)
+## Viabilidad técnica
 
 ### Recursos de Hardware
 
@@ -245,7 +233,7 @@ Comprar Faltantes: una vez comprados el Rol Mamá puede limpiar la lista de prod
 | IDE                            | NetBeans, Android Studio, MySQL Workbench      |
 | Base de Datos                  | MySQL 8.0.2x                                   |
 
-## [Viabilidad económica](#bookmark=id.30j0zll)
+## [Viabilidad económica](#contenido)
 
 ### Estimación de Costos Hardware
 
@@ -287,11 +275,11 @@ Comprar Faltantes: una vez comprados el Rol Mamá puede limpiar la lista de prod
 | Usuarios del sistema de información  |         |          |        |
 | ** Costo   Total                     | 380.000 | 4        | 1 mes  |
 
-## [Viabilidad operacional](#bookmark=id.30j0zll)
+## [Viabilidad operacional](#contenido)
 
 Teniendo en cuenta los resultados de las entrevistas se detectó que los usuarios finales estarán predispuestos a capacitarse y usar el nuevo sistema.
 
-## [Gestión del Proyecto](#bookmark=id.30j0zll)
+## [Gestión del Proyecto](#contenido)
 
 ### Estudio de Riesgos del proyecto
 
@@ -307,7 +295,7 @@ Teniendo en cuenta los resultados de las entrevistas se detectó que los usuario
 
 Falta
 
-## [Marco de desarrollo](#bookmark=id.30j0zll)
+## [Marco de desarrollo](#contenido)
 
 Para el modelo de proceso unificado, el marco de desarrollo es el siguiente:
 
@@ -326,11 +314,11 @@ Referencias: **c**= comenzar, **r** = refinar
 | Pruebas                  | Modelo de Prueba                  |             | c                |
 | Entorno                  | Marco de Desarrollo               | c           | r                |
 
-## [Requisitos](#bookmark=id.30j0zll)
+## [Requisitos](#contenido)
 
-### [Modelo de Casos de Usos](#bookmark=id.30j0zll)
+### Modelo de Casos de Usos
 
-#### [Diagrama](#bookmark=id.30j0zll)
+#### Diagrama
 
 ```mermaid
 flowchart  LR
@@ -349,7 +337,7 @@ m-->  d
 m-->  e
 ```
 
-#### [Textos](#bookmark=id.30j0zll)
+#### Textos
 
 ##### Caso De Uso Acceder al Sistema
 
@@ -464,9 +452,9 @@ Cuestiones abiertas: -.
 *Frecuencia:* diario.
 *Cuestiones abiertas:* Si el error de conexión persiste quizás se conveniente guardar el registro en un archivo de texto.
 
-## [Modelado del Negocio](#bookmark=id.30j0zll)
+## [Modelado del Negocio](#contenido)
 
-### [Modelo del Dominio](#bookmark=id.30j0zll)
+### Modelo del Dominio
 
 ```mermaid
 classDiagram
@@ -530,15 +518,15 @@ class  Madre{
 }
 ```
 
-## [Análisis y Diseño](#bookmark=id.30j0zll)
+## [Análisis y Diseño](#contenido)
 
-### [Modelo del Análisis](#bookmark=id.30j0zll)
+### Modelo del Análisis
 
-[Diagramas de Secuencias del Sistema](#bookmark=id.30j0zll)
+#### Diagramas de Secuencias del Sistema
 
 Falta
 
-### [Contratos](#bookmark=id.30j0zll)
+### [Contratos](#contenido)
 
 OPERACIÓN: **accesoAlSistema(usuario,contraseña).**
 REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema
@@ -570,7 +558,7 @@ REFERENCIAS CRUZADAS: caso de uso Uso Quitar Faltantes.
 PRECONDICIONES: El sistema ya tenga los Productos cargados en la Lista.
 POSTCONDICIONES: la consulta se subió a la BBDD en la nube.
 
-## [Prototipos](#bookmark=id.30j0zll)
+## [Prototipos](#contenido)
 
 ### Prototipos No Operacionales
 
