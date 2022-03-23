@@ -16,13 +16,13 @@
 
 [Descripción del Problema / Oportunidad](#descripción-del-problema--oportunidad)
 
-[Descripción del personal involucrado [Stakeholders]](#descripción-del-personal-involucrado-stakeholders)
+[Descripción del personal involucrado (Stakeholders)](#descripción-del-personal-involucrado-stakeholders)
 
 [Resumen del personal involucrado (No usuarios)](#resumen-del-personal-involucrado-no-usuarios)
 
 [Resumen de Usuarios](#resumen-de-usuarios)
 
-[Visión general del producto [Sistema de información]](#visión-general-del-producto-sistema-de-información)
+[Visión general del producto (Sistema de información)](#visión-general-del-producto-sistema-de-información)
 
 [Diagrama de Bloques](#diagrama-de-bloques)
 
@@ -34,7 +34,7 @@
 
 [Especificación Complementaria](#especificación-complementaria)
 
-[Reglas del dominio – [Reglas de negocio]](#reglas-del-dominio--reglas-de-negocio)
+[Reglas del dominio – (Reglas de negocio)](#reglas-del-dominio--reglas-de-negocio)
 
 [Información en dominio de interés](#información-en-dominio-de-interés)
 
@@ -96,9 +96,9 @@
 
 El sistema planteado se basa en optimizar el tiempo al realizar la lista de compras las cuales conllevan un tiempo bastante considerable porque implican un control de los productos faltantes únicamente por parte del Rol Mamá. Permitiremos que el Rol Hijo pueda crear una Lista de Productos para minimizar el tiempo. 
 
-Además el programa facilitara una comparación de precios entre los diversos Supermercados aunque requerirá una conexión a internet constante si se quiere tener una lista de precios actualizada.
+Además el programa facilitara una comparación de precios/ofertas entre los diversos Supermercados (aunque requerirá una conexión a internet constante si se quiere tener una lista de precios actualizada), estos se iran actualizando manualmente por el Rol Mamá cada vez que realice una visita al Supermercado o se descubran ofertas.
 
-En la ultima fase del proyecto se integrara una IA que permita al programa agregar productos a la lista escaneando su código de barras, y también podrá obtener precios con solo analizar una foto del precio visible en góndola. 
+En la ultima fase del proyecto se integrara una IA que permita al programa agregar productos a la Lista de Productos escaneando su código de barras, y también podrá obtener precios con solo analizar una foto del precio visible en góndola. 
 
 ### Alcance
 
@@ -119,12 +119,12 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 | Afecta a                     | −Rol Hijo y Madre.                                                                                                                                        |
 |                              | −La oportunidad estará afectando de manera directa al conjunto familiar, ya que se puede producir una gran pérdida de tiempo creando la lista de compras. |
 | Una adecuada solución sería  | −Sistema de Lista de Compras.                                                                                                                             |
-| El impacto / beneficio sería | −Facilita el agregado de productos gracias a una IA que analizara las fotos de estos.                                                                     |
+| El impacto / beneficio sería | −Minimizamos el gasto al llevar un registro de precios.                                                                                                   |
 |                              | −Minimizamos el factor de error humano.                                                                                                                   |
 |                              | −Reducimos el tiempo de creación de la lista de compras.                                                                                                  |
-|                              | −Minimizamos el gasto al llevar un registro de precios.                                                                                                   |
+|                              | −Facilita el agregado de productos gracias a una IA que analizara las fotos de estos.                                                                     |
 
-## [Descripción del personal involucrado [Stakeholders]](#contenido)
+## [Descripción del personal involucrado Stakeholders](#contenido)
 
 ### Resumen del personal involucrado (No usuarios)
 
@@ -143,7 +143,7 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 | Directos | Rol Hijo  | Cargan en el software los datos de los productos faltantes.   |
 |          | Rol Madre | Utiliza la lista de compras creada para realizar las compras. |
 
-## [Visión general del producto [Sistema de información]](#contenido)
+## [Visión general del producto (Sistema de información)](#contenido)
 
 ### Diagrama de Bloques
 
@@ -159,9 +159,9 @@ Al abrir el software se encuentran claras indicaciones de forma de uso. Con tan 
 
 El sistema logra aumentar el flujo de trabajo dentro del grupo familiar debido a su rapidez ya que quita trabajo extra a los encargados de las compras.
 
-# [Especificación Complementaria](#contenido)
+# Especificación Complementaria
 
-## [Reglas del dominio – [Reglas de negocio]](#contenido)
+## [Reglas del dominio – (Reglas de negocio)](#contenido)
 
 | Id      | Regla                                                         | Grado de variación                                                          | Origen                  |
 | ------- | ------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------- |
@@ -174,9 +174,9 @@ El sistema logra aumentar el flujo de trabajo dentro del grupo familiar debido a
 ```mermaid
 graph TD
     subgraph Hijo
-    A(( )) 
-    B(Acceder al Sistema)
-    C(Agregar Faltantes)
+    A(Acceder al Sistema)
+    B(Agregar Productos al Prog)
+    C(Crear Lista de Faltantes)
     D(Ver/Listar Faltantes)
     A --> B
     B --> C
@@ -184,31 +184,41 @@ graph TD
     end
     subgraph Mamá
     Z(( ))
-    Y(Comprar/Quitar Faltantes)
+    Y(Gestionar Acceso)
     X(Editar Faltantes)
-    W(( ))
-    Z -->|Gestionar| B
+    W(Gestionar Precios)
+    V(Comprar/Quitar Faltantes)
+    U(( ))
+    Z --> Y
+    Y --> A
     D --> X
-    X --> Y
-    Y --> W
+    X --> W
+    W --> V
+    V --> U
     end
 ```
 
 ### [Descripción del Proceso](#contenido)
 
-Acceder al sistema: el Rol Mamá tiene que ingresar al sistema creando por unica vez una contraseña. Luego debe agregar el Rol Hijo para permitir a otros usuarios usar el sistema administrándoles credenciales de acceso. El Rol Hijo accede con esas credenciales creadas por Rol Mamá.
+Gestionar Acceso: el Rol Mamá tiene que ingresar al sistema creando por unica vez una contraseña. Luego debe agregar el Rol Hijo para permitir a otro/s usuarios usar el sistema administrándole/s credencial/es de acceso.
 
-Agregar Faltantes: una vez iniciada la sesión se procede buscar los productos para actualizar sus datos y si no existiera se debe crear los productos para cargar sus datos y agregarlos a la Lista de Compras.
+Acceder al Sistema: El Rol Hijo/Mamá accede al sistema con las credenciales creadas por Rol Mamá.
 
-Ver Faltantes: el software realizara los cálculos de los precios de los productos faltantes. Luego generará una lista detallada de todos los productos y en que Supermercado conviene comprarlos.
+Agregar Productos al Prog: Una vez iniciada la sesión Hijo puede agregar productos que no esten aún en la base de datos.
 
-Editar Faltantes: el Rol Mamá puede modificar los productos, la lista de productos faltantes o sus precios.
+Crear Lista de Faltantes: Con la sessión iniciada Hijo puede buscar los productos faltantes para agregarlos a la Lista de Compras.
 
-Comprar Faltantes: una vez comprados el Rol Mamá puede limpiar la lista de productos faltantes, estos se almacenaran en un registro.
+Ver Faltantes: El software permite a los usuarios ver la Lista de Productos confeccionada por Hijo, el sistema realizara el cálculo de los precios de los productos faltantes y luego generará una lista detallada de estos y en que Supermercado conviene comprarlos.
 
-# [Viabilidad](#contenido)
+Editar Faltantes: El Rol Mamá puede modificar la Lista de Productos faltantes para agregar, o eliminar los innecesarios.
 
-## Viabilidad técnica
+Gestionar Precios: Rol Mamá puede agregar y modificar los precios a cada producto. También debería poder agregar ofertas a estos.
+
+Comprar Faltantes: una vez comprados los productos el Rol Mamá puede limpiar la lista de productos faltantes, estos se almacenaran en un registro de Compras.
+
+# Viabilidad
+
+## [Viabilidad técnica](#contenido)
 
 ### Recursos de Hardware
 
@@ -323,18 +333,25 @@ Referencias: **c**= comenzar, **r** = refinar
 ```mermaid
 flowchart  LR
 subgraph Caso de Uso Lista de Compras
-a([Acceder al Sistema])
-b([Agregar Faltantes])
-c([Ver/Listar Faltantes])
-d([Editar Faltantes])
-e([Comprar/Quitar Faltantes])
+b([Acceder al Sistema])
+c([Agregar Producto al Prog])
+d([Crear Lista Faltantes])
+e([Ver/Listar Faltantes])
+a([Gestionar Acceso])
+f([Editar Faltantes])
+g([Gestionar Precios])
+i([Comprar/Quitar Faltantes])
 end
-h["🧍‍♂️Hijo"]-->  a
-h-->  b
-m["🤰Mamá"]-->  a
-m-->  c
-m-->  d
-m-->  e
+h["🧍‍♂️Hijo"] -->  b
+h -->  c
+h -->  d
+h -->  e
+m["🤰Mamá"] -->  a
+m --> b
+m --> e
+m --> f
+m --> g
+m --> i
 ```
 
 #### Textos
@@ -356,24 +373,39 @@ m-->  e
 1. Error: el usuario no puede ingresar sus datos por problemas de
    hardware. Solución: Comunicarse con el técnico.
 
-2. a) Usuario inexistente. Solución: Comunicarse con el técnico para
-   
-       generar nuevo usuario. 
-   
-    b) Contraseña Incorrecta. Solución: Comunicarse
-   
-       con el técnico para restablecer contraseña.
+2. a) Usuario inexistente. Solución: Comunicarse con el técnico para generar nuevo usuario.
+    b) Contraseña Incorrecta. Solución: Comunicars con el técnico para restablecer contraseña.
 
 *Tecnologías:* celular con so Android 5 o posterior.
 *Frecuencia:* diario
 Cuestiones abiertas: -.
 
-##### Caso De Uso Agregar Faltantes
+##### Caso De Uso Agregar Producto al Prog
 
 *Actor principal:* Hijo.
 *Personas involucradas:* .
-*Precondiciones:* Que el Hijo haya iniciado sesión y que la base de datos este creada y en línea.
-*Postcondiciones:* Carga de los productos faltantes.
+*Precondiciones:* Que el Hijo haya iniciado sesión, que la base de datos este creada y en línea.
+*Postcondiciones:* Carga del producto faltantes a la base de datos del sistema.
+*Escenario principal de éxito:* 
+| Acción del Actor (o intención)              | Responsabilidad del Sistema                        |
+|---------------------------------------------|----------------------------------------------------|
+| 1. El usuario ingresa el producto faltante. | 2. El sistema verifica la integridad de los datos. |
+|                                             | 3. El sistema carga los productos faltantes.       |
+
+*Extensiones:*
+
+2 ) ERROR: Los datos ingresados no son correctos. Solución: Ingrese nuevamente los datos.
+
+*Tecnologías:* celular con so Android 5 o posterior.
+*Frecuencia:* diario.
+*Cuestiones abiertas:* -.
+
+##### Caso De Uso Crear Lista Faltantes
+
+*Actor principal:* Hijo.
+*Personas involucradas:* .
+*Precondiciones:* Que el Hijo haya iniciado sesión y que los productos se encuentren agregados en la BBDD del sistema.
+*Postcondiciones:* Carga de las lista de productos a comprar en la base de datos del sistema.
 *Escenario principal de éxito:* 
 | Acción del Actor (o intención)                 | Responsabilidad del Sistema                         |
 |--------------------------------------------    |-------------------------------------------------    |
@@ -382,7 +414,7 @@ Cuestiones abiertas: -.
 
 *Extensiones:*
 
-2 ) ERROR: Los datos ingresados no son correctos. Solución: Ingrese nuevamente los datos.
+2 ) ERROR: El producto no se encuentra en la BBDD. Solución: Agregue el producto a la base de datos del sistema.
 
 *Tecnologías:* celular con so Android 5 o posterior.
 *Frecuencia:* diario.
@@ -408,9 +440,56 @@ Cuestiones abiertas: -.
 
 *Tecnologías:* celular con so Android 5 o posterior.
 *Frecuencia:* diario.
-*Cuestiones abiertas:* -.
+*Cuestiones abiertas:* No tiene que generar un ERROR porque el valor de negocio es una Lista de Compras.
+
+##### Caso De Uso Gestionar Acceso
+
+*Actor principal:* Madre.
+*Personas involucradas:* -.
+*Precondiciones:* El sistema espera que Mamá cree un perfil para Madre/Hijo.
+*Postcondiciones:* Perfil creado con datos de inicio de sesión.
+*Escenario principal de éxito:*
+|     Acción del Actor (o   intención)                     |     Responsabilidad del Sistema                         |
+|------------------------------------------------------    |-----------------------------------------------------    |
+| 1. El usuario ingresa sus datos de identificación.          | 2. El sistema comprueba el usuario y contraseña.           |
+|                                                        | 3. Iniciar sesión.                                         |
+
+*Extensiones:*
+
+1. Error: el usuario no puede ingresar sus datos por problemas de
+   hardware. Solución: Comunicarse con el técnico.
+
+2. a) Usuario inexistente. Solución: Comunicarse con el técnico para generar nuevo usuario.
+    b) Contraseña Incorrecta. Solución: Comunicars con el técnico para restablecer contraseña.
+
+*Tecnologías:* celular con so Android 5 o posterior.
+*Frecuencia:* diario
+Cuestiones abiertas: -.
+
 
 ##### Caso De Uso Editar Faltantes
+
+*Actor principal:* Madre.
+*Personas involucradas:* .
+*Precondiciones:* Que Madre haya iniciado sesión y que haya una Lista de Compras creada y en línea.
+*Postcondiciones:* visión de la pantalla de edición de Lista de Productos faltantes.
+*Escenario principal de éxito:* 
+| Acción del Actor (o intención)                 | Responsabilidad del Sistema                         |
+|--------------------------------------------    |-------------------------------------------------    |
+| 1. El usuario selecciona la Lista de Productos para editar.     | 2. El sistema verifica los productos agregados a la Lista de Productos.                  |
+|                                                | 3. El sistema exhibe los productos faltantes.                  |
+|  4. El usuario modifica la Lista de Productos. | 5. El sistema actualiza la Lista de Productos.                  |
+
+*Extensiones:*
+
+2 ) ERROR: No hay productos cargados a la Lista de Productos. Solución: Ingrese los productos.
+5 ) ERROR: Los datos ingresados no son correctos. Solución: Ingrese nuevamente los datos.
+
+*Tecnologías:* celular con so Android 5 o posterior.
+*Frecuencia:* diario.
+*Cuestiones abiertas:* La idea era que solo Mamá pueda modificar cantidad o eliminar productos de la Lista pero no tiene mucho sentido porque Hijo puede volver a agregarlos, pero en caso de impermitir a Hijo modificar una Lista haría que esta quede desactualizada.
+
+##### Caso De Uso Gestionar Precios
 
 *Actor principal:* Madre.
 *Personas involucradas:* .
@@ -452,9 +531,9 @@ Cuestiones abiertas: -.
 *Frecuencia:* diario.
 *Cuestiones abiertas:* Si el error de conexión persiste quizás se conveniente guardar el registro en un archivo de texto.
 
-## [Modelado del Negocio](#contenido)
+## Modelado del Negocio
 
-### Modelo del Dominio
+### [Modelo del Dominio](#contenido)
 
 ```mermaid
 classDiagram
@@ -463,9 +542,11 @@ Artículo  <|-- Tipo : de
 Artículo  <|-- Supermercado : vende
 Artículo  <|-- ListaCompras : contiene
 ListaCompras  <|--  Madre  :  edita
-Comprados  <|--  Madre  :  agrega
-Comprados  <|--  Artículo  :  son
+RegistroCompras  <|--  Madre  :  lleva
+RegistroCompras  <|--  Artículo  :  son
+RegistroCompras  <|--  ListaCompras  :  pasa
 Precio  <|--  Artículo  :  tiene
+Precio  <|--  Oferta :  actualiza
 ListaCompras  <|--  Hijo  :  crea
 Artículo  :  +int ID_Art
 Artículo  :  +int id_tip
@@ -489,7 +570,7 @@ class  ListaCompras{
 +int id_art
 +int Cantidad
 }
-class  Comprados{
+class  RegistroCompras{
 +int ID_Com
 +int id_pre
 +int Cantidad
@@ -500,6 +581,13 @@ class  Precio{
 +int id_sup
 +float Precio
 +Date Fecha
+}
+class  Oferta{
++int ID_Ofe
++int id_pre
++Date inicio
++Date fin
++float Precio
 }
 class  Hijo{
 +int ID_Hij
@@ -518,9 +606,9 @@ class  Madre{
 }
 ```
 
-## [Análisis y Diseño](#contenido)
+## Análisis y Diseño
 
-### Modelo del Análisis
+### [Modelo del Análisis](#contenido)
 
 #### Diagramas de Secuencias del Sistema
 
@@ -533,33 +621,43 @@ REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
 POSTCONDICIONES: se creó una instancia de Usuario, Usuario se asoció con Cliente.
 
-OPERACIÓN: **agregarProductos().**
-REFERENCIAS CRUZADAS: caso de uso Agregar Faltantes
+OPERACIÓN: **agregarProducto().**
+REFERENCIAS CRUZADAS: caso de uso Agregar Producto al Prog.
 PRECONDICIONES: Que el usuario haya ingresado exitosamente al sistema.
 POSTCONDICIONES: se creó una instancia de Producto, Producto se asoció con ListaProductos.
 
-OPERACIÓN: **verProductos().**
-REFERENCIAS CRUZADAS: caso de uso Ver Faltantes
+OPERACIÓN: **crearListaFaltantes(Producto).**
+REFERENCIAS CRUZADAS: caso de uso Crear Lista Faltantes.
+PRECONDICIONES: Que el usuario haya ingresado exitosamente al sistema.
+POSTCONDICIONES: se creó una instancia de Producto, Producto se asoció con ListaProductos.
+
+OPERACIÓN: **verFaltantes().**
+REFERENCIAS CRUZADAS: caso de uso Ver Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
 POSTCONDICIONES: se creó una instancia de ListaProductos
 
+OPERACIÓN: **gestionarAcceso().**
+REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema.
+PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
+POSTCONDICIONES: se creó una instancia de Usuario, Usuario se asoció con Cliente.
+
 OPERACIÓN: **editarListaProductos(ListaProductos).**
-REFERENCIAS CRUZADAS: caso de uso Editar Faltantes
+REFERENCIAS CRUZADAS: caso de uso Editar Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
 POSTCONDICIONES: se creó una instancia de ListaProductos.
 
-OPERACIÓN: **editarProductos(Producto).**
-REFERENCIAS CRUZADAS: caso de uso Editar Productos
+OPERACIÓN: **gestionarPrecios(Producto).**
+REFERENCIAS CRUZADAS: caso de uso Gestionar Precios.
 PRECONDICIONES: El sistema ya tenga Productos cargados.
-POSTCONDICIONES: se creó una instancia de Productos.
+POSTCONDICIONES: se creó una instancia de Precios.
 
 OPERACIÓN: **quitarFaltantes(ListaProductos).**
 REFERENCIAS CRUZADAS: caso de uso Uso Quitar Faltantes.
 PRECONDICIONES: El sistema ya tenga los Productos cargados en la Lista.
-POSTCONDICIONES: la consulta se subió a la BBDD en la nube.
+POSTCONDICIONES: se creó una instancia de RegistroCompras.
 
-## [Prototipos](#contenido)
+## Prototipos
 
-### Prototipos No Operacionales
+### [Prototipos No Operacionales](#contenido)
 
 Falta
