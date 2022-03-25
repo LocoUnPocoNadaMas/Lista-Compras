@@ -1,8 +1,5 @@
 # _Sistema Lista de Compras_
 
-
-
-
 ## Índice
 
 ### Contenido
@@ -462,7 +459,6 @@ Cuestiones abiertas: -.
 *Frecuencia:* diario
 Cuestiones abiertas: -.
 
-
 ##### Caso De Uso Editar Faltantes
 
 *Actor principal:* Madre.
@@ -544,12 +540,15 @@ RegistroCompras  <|--  ListaCompras  :  pasa
 Precio  <|--  Producto  :  tiene
 Precio  <|--  Oferta :  actualiza
 ListaCompras  <|--  Hijo  :  crea
-Producto  :  +int ID_Pro
-Producto  :  +int id_tip
-Producto  :  +int id_mar
-Producto  :  +String Descripción
 Usuario  <|--  Madre  :  crea
 Usuario  <|--  Hijo  :  tiene
+Precio  <|-- Supermercado : pone
+class Producto{
++int ID_Pro
++int id_tip
++int id_mar
++String Descripción
+}
 class  Marca{
 +int ID_Mar
 +String NombreMarca
@@ -591,6 +590,7 @@ class  Usuario{
 +int ID_Usu
 +String Nombre
 +String Clave
++int Permiso
 }
 class  Hijo{
 +int id_usu
@@ -621,6 +621,7 @@ Falta.
 ### [Diagramas de Secuencias del Sistema](#contenido)
 
 Acceder al Sistema
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
@@ -631,6 +632,7 @@ sequenceDiagram
 ```
 
 Agregar Producto al Prog
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
@@ -641,6 +643,7 @@ sequenceDiagram
 ```
 
 Crear Lista de Faltantes
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
@@ -651,6 +654,7 @@ sequenceDiagram
 ```
 
 Ver Lista de Faltantes
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
@@ -661,16 +665,18 @@ sequenceDiagram
 ```
 
 Gestionar Acceso
+
 ```mermaid
 sequenceDiagram
     Actor Mamá
     Mamá->>+Lista de Compras: Usuario()
-    Mamá->>+Lista de Compras: gestionarAcceso(nombre, clave)
+    Mamá->>+Lista de Compras: gestionarAcceso(nombre, clave, permiso)
     Lista de Compras-->>-Mamá: "Usuario Actualizado con Éxito"
     Lista de Compras-->>-Mamá: Fin Usuario()
 ```
 
 Editar Faltantes
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá
@@ -681,6 +687,7 @@ sequenceDiagram
 ```
 
 Gestionar Precios
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá
@@ -691,6 +698,7 @@ sequenceDiagram
 ```
 
 Quitar Faltantes
+
 ```mermaid
 sequenceDiagram
     Actor A as Mamá
@@ -699,7 +707,6 @@ sequenceDiagram
     Lista de Compras-->>-A: "Lista Reiniciada con Éxito"
     Lista de Compras-->>-A: Fin ListaCompras()
 ```
-
 
 ### [Contratos](#contenido)
 
@@ -723,7 +730,7 @@ REFERENCIAS CRUZADAS: caso de uso Ver Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
 POSTCONDICIONES: se creó una instancia de ListaCompras.
 
-OPERACIÓN: **gestionarAcceso().**
+OPERACIÓN: **gestionarAcceso(nombre, clave, permiso).**
 REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema.
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
 POSTCONDICIONES: se creó una instancia de Usuario.
@@ -736,7 +743,7 @@ POSTCONDICIONES: se creó una instancia ListaCompras, ListaCompras se asoció co
 OPERACIÓN: **gestionarPrecios(Producto).**
 REFERENCIAS CRUZADAS: caso de uso Gestionar Precios.
 PRECONDICIONES: El sistema ya tenga Productos cargados.
-POSTCONDICIONES: se creó una instancia de Precio, Precio se asoció con Producto.
+POSTCONDICIONES: se creó una instancia de Precio, Precio se asoció con Producto y Supermercado.
 
 OPERACIÓN: **quitarListaCompras(ListaProductos).**
 REFERENCIAS CRUZADAS: caso de uso Uso Quitar Faltantes.
@@ -747,4 +754,9 @@ POSTCONDICIONES: se creó una instancia de RegistroCompras, RegistroCompras se a
 
 ### [Prototipos No Operacionales](#contenido)
 
-Falta.
+![Login](./img/mockups/Login.drawio.png)
+![MenuPrincipal](./img/mockups/MenuPrincipal.drawio.png)
+![Producto](./img/mockups/Producto.drawio.png)
+![ListaCompras](./img/mockups/ListaCompras.drawio.png)
+![Imagen no encontrada: ./img/mockups/Usuario.drawio.png](./img/mockups/Usuario.drawio.png "Imagen no encontrada: ./img/mockups/Usuario.drawio.png")
+
