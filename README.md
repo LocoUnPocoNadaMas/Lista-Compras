@@ -533,21 +533,23 @@ Cuestiones abiertas: -.
 
 ```mermaid
 classDiagram
-Artículo  <|-- Marca : hace
-Artículo  <|-- Tipo : de
-Artículo  <|-- Supermercado : vende
-Artículo  <|-- ListaCompras : contiene
+Producto  <|-- Marca : hace
+Producto  <|-- Tipo : de
+Producto  <|-- Supermercado : vende
+Producto  <|-- ListaCompras : contiene
 ListaCompras  <|--  Madre  :  edita
 RegistroCompras  <|--  Madre  :  lleva
-RegistroCompras  <|--  Artículo  :  son
+RegistroCompras  <|--  Producto  :  son
 RegistroCompras  <|--  ListaCompras  :  pasa
-Precio  <|--  Artículo  :  tiene
+Precio  <|--  Producto  :  tiene
 Precio  <|--  Oferta :  actualiza
 ListaCompras  <|--  Hijo  :  crea
-Artículo  :  +int ID_Art
-Artículo  :  +int id_tip
-Artículo  :  +int id_mar
-Artículo  :  +String Descripción
+Producto  :  +int ID_Pro
+Producto  :  +int id_tip
+Producto  :  +int id_mar
+Producto  :  +String Descripción
+Usuario  <|--  Madre  :  crea
+Usuario  <|--  Hijo  :  tiene
 class  Marca{
 +int ID_Mar
 +String NombreMarca
@@ -563,7 +565,7 @@ class  Supermercado{
 }
 class  ListaCompras{
 +int ID_Lis
-+int id_art
++int id_pro
 +int Cantidad
 }
 class  RegistroCompras{
@@ -573,7 +575,7 @@ class  RegistroCompras{
 }
 class  Precio{
 +int ID_Pre
-+int id_art
++int id_pro
 +int id_sup
 +float Precio
 +Date Fecha
@@ -585,17 +587,18 @@ class  Oferta{
 +Date fin
 +float Precio
 }
-class  Hijo{
-+int ID_Hij
+class  Usuario{
++int ID_Usu
 +String Nombre
 +String Clave
+}
+class  Hijo{
++int id_usu
 +AgregarFaltantes()
 +VerFaltantes()
 }
 class  Madre{
-+int ID_Mad
-+String Nombre
-+String Clave
++int id_usu
 +VerFaltantes()
 +EditarFaltantes()
 +ComprarFaltantes()
@@ -608,7 +611,7 @@ class  Madre{
 
 Falta.
 
-### Diagramas de Secuencias del Sistema
+### [Diagramas de Secuencias del Sistema](#contenido)
 
 Acceder al Sistema
 ```mermaid
@@ -673,7 +676,7 @@ sequenceDiagram
 Gestionar Precios
 ```mermaid
 sequenceDiagram
-    Actor A as Mamá/Hijo
+    Actor A as Mamá
     A->>+Lista de Compras: precios()
     A->>+Lista de Compras: gestionarPrecios(Producto, precio)
     Lista de Compras-->>-A: "Precio Actualizado con Éxito"
@@ -683,7 +686,7 @@ sequenceDiagram
 Quitar Faltantes
 ```mermaid
 sequenceDiagram
-    Actor A as Mamá/Hijo
+    Actor A as Mamá
     A->>+Lista de Compras: listaCompras()
     A->>+Lista de Compras: quitarFaltantes(Lista <Productos>)
     Lista de Compras-->>-A: "Lista Reiniciada con Éxito"
@@ -696,42 +699,42 @@ sequenceDiagram
 OPERACIÓN: **accesoAlSistema(usuario,contraseña).**
 REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
-POSTCONDICIONES: se creó una instancia de Usuario, Usuario se asoció con Cliente.
+POSTCONDICIONES: se creó una instancia de Usuario.
 
 OPERACIÓN: **agregarProducto().**
 REFERENCIAS CRUZADAS: caso de uso Agregar Producto al Prog.
 PRECONDICIONES: Que el usuario haya ingresado exitosamente al sistema.
-POSTCONDICIONES: se creó una instancia de Producto, Producto se asoció con ListaProductos.
+POSTCONDICIONES: se creó una instancia de Producto.
 
 OPERACIÓN: **crearListaFaltantes(Producto).**
 REFERENCIAS CRUZADAS: caso de uso Crear Lista Faltantes.
 PRECONDICIONES: Que el usuario haya ingresado exitosamente al sistema.
-POSTCONDICIONES: se creó una instancia de Producto, Producto se asoció con ListaProductos.
+POSTCONDICIONES: se creó una instancia ListaCompras, ListaCompras se asoció con Producto.
 
 OPERACIÓN: **verFaltantes().**
 REFERENCIAS CRUZADAS: caso de uso Ver Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
-POSTCONDICIONES: se creó una instancia de ListaProductos
+POSTCONDICIONES: se creó una instancia de ListaCompras.
 
 OPERACIÓN: **gestionarAcceso().**
 REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema.
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
-POSTCONDICIONES: se creó una instancia de Usuario, Usuario se asoció con Cliente.
+POSTCONDICIONES: se creó una instancia de Usuario.
 
 OPERACIÓN: **editarListaProductos(ListaProductos).**
 REFERENCIAS CRUZADAS: caso de uso Editar Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
-POSTCONDICIONES: se creó una instancia de ListaProductos.
+POSTCONDICIONES: se creó una instancia ListaCompras, ListaCompras se asoció con Producto.
 
 OPERACIÓN: **gestionarPrecios(Producto).**
 REFERENCIAS CRUZADAS: caso de uso Gestionar Precios.
 PRECONDICIONES: El sistema ya tenga Productos cargados.
-POSTCONDICIONES: se creó una instancia de Precios.
+POSTCONDICIONES: se creó una instancia de Precio, Precio se asoció con Producto.
 
 OPERACIÓN: **quitarFaltantes(ListaProductos).**
 REFERENCIAS CRUZADAS: caso de uso Uso Quitar Faltantes.
 PRECONDICIONES: El sistema ya tenga los Productos cargados en la Lista.
-POSTCONDICIONES: se creó una instancia de RegistroCompras.
+POSTCONDICIONES: se creó una instancia de RegistroCompras, RegistroCompras se asoció con ListaCompras, Producto y Precio.
 
 ## Prototipos
 
