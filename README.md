@@ -625,7 +625,7 @@ Acceder al Sistema
 sequenceDiagram
     Actor A as Mamá/Hijo
     A->>+Lista de Compras: Login()
-    A->>+Lista de Compras: AccederAlSistema(usuario,contraseña)
+    A->>+Lista de Compras: accederAlSistema(usuario,contraseña)
     Lista de Compras-->>-A: "Usuario Autenticado con Éxito"
     Lista de Compras-->>-A: Fin Login()
 ```
@@ -703,7 +703,7 @@ sequenceDiagram
 
 ### [Contratos](#contenido)
 
-OPERACIÓN: **AccederAlSistema(usuario,contraseña).**
+OPERACIÓN: **accederAlSistema(usuario,contraseña).**
 REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
 POSTCONDICIONES: se creó una instancia de Usuario.
@@ -713,12 +713,12 @@ REFERENCIAS CRUZADAS: caso de uso Agregar Producto al Prog.
 PRECONDICIONES: Que el usuario haya ingresado exitosamente al sistema.
 POSTCONDICIONES: se creó una instancia de Producto.
 
-OPERACIÓN: **crearListaFaltantes(Producto).**
+OPERACIÓN: **agregarAListaCompras(Producto).**
 REFERENCIAS CRUZADAS: caso de uso Crear Lista Faltantes.
 PRECONDICIONES: Que el usuario haya ingresado exitosamente al sistema.
 POSTCONDICIONES: se creó una instancia ListaCompras, ListaCompras se asoció con Producto.
 
-OPERACIÓN: **verFaltantes().**
+OPERACIÓN: **verListaCompras().**
 REFERENCIAS CRUZADAS: caso de uso Ver Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
 POSTCONDICIONES: se creó una instancia de ListaCompras.
@@ -728,7 +728,7 @@ REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema.
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
 POSTCONDICIONES: se creó una instancia de Usuario.
 
-OPERACIÓN: **editarListaProductos(ListaProductos).**
+OPERACIÓN: **editarListaCompras(ListaProductos).**
 REFERENCIAS CRUZADAS: caso de uso Editar Faltantes.
 PRECONDICIONES: El sistema ya tenga Productos cargados en la Lista.
 POSTCONDICIONES: se creó una instancia ListaCompras, ListaCompras se asoció con Producto.
@@ -738,7 +738,7 @@ REFERENCIAS CRUZADAS: caso de uso Gestionar Precios.
 PRECONDICIONES: El sistema ya tenga Productos cargados.
 POSTCONDICIONES: se creó una instancia de Precio, Precio se asoció con Producto.
 
-OPERACIÓN: **quitarFaltantes(ListaProductos).**
+OPERACIÓN: **quitarListaCompras(ListaProductos).**
 REFERENCIAS CRUZADAS: caso de uso Uso Quitar Faltantes.
 PRECONDICIONES: El sistema ya tenga los Productos cargados en la Lista.
 POSTCONDICIONES: se creó una instancia de RegistroCompras, RegistroCompras se asoció con ListaCompras, Producto y Precio.
