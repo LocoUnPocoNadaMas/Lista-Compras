@@ -1,6 +1,11 @@
-# Índice
+# _Sistema Lista de Compras_
 
-## Contenido
+
+
+
+## Índice
+
+### Contenido
 
 [Visión](#visión)
 
@@ -88,11 +93,11 @@
 
 [Prototipos No Operacionales](#prototipos-no-operacionales)
 
-# [Visión](#contenido)
+# Visión
 
 ## Introducción
 
-## Propósito
+### [Propósito](#contenido)
 
 El sistema planteado se basa en optimizar el tiempo al realizar la lista de compras las cuales conllevan un tiempo bastante considerable porque implican un control de los productos faltantes únicamente por parte del Rol Mamá. Permitiremos que el Rol Hijo pueda crear una Lista de Productos para minimizar el tiempo. 
 
@@ -100,11 +105,11 @@ Además el programa facilitara una comparación de precios/ofertas entre los div
 
 En la ultima fase del proyecto se integrara una IA que permita al programa agregar productos a la Lista de Productos escaneando su código de barras, y también podrá obtener precios con solo analizar una foto del precio visible en góndola. 
 
-### Alcance
+### [Alcance](#contenido)
 
 Este sistema estará orientado a una familia tipo (o grupos de personas que convivan juntos y cumplan los mismos roles).
 
-### Definiciones, Acrónimos, y Abreviaciones
+#### Definiciones, Acrónimos, y Abreviaciones
 
 **I.A:** Inteligencia Artificial.
 **Rol Mamá:** Se utiliza para facilitar la visualización del problema. Es un perfil de administrador encargado de la configuración total.
@@ -147,7 +152,7 @@ Este sistema estará orientado a una familia tipo (o grupos de personas que conv
 
 ### Diagrama de Bloques
 
-Falta
+Falta.
 
 ## [Resumen de las características del Sistema de Información](#contenido)
 
@@ -172,30 +177,21 @@ El sistema logra aumentar el flujo de trabajo dentro del grupo familiar debido a
 ## [Información en dominio de interés](#contenido)
 
 ```mermaid
-graph TD
-    subgraph Hijo
-    A(Acceder al Sistema)
-    B(Agregar Productos al Prog)
-    C(Crear Lista de Faltantes)
-    D(Ver/Listar Faltantes)
-    A --> B
-    B --> C
-    C --> D
-    end
-    subgraph Mamá
-    Z(( ))
-    Y(Gestionar Acceso)
-    X(Editar Faltantes)
-    W(Gestionar Precios)
-    V(Comprar/Quitar Faltantes)
-    U(( ))
-    Z --> Y
-    Y --> A
-    D --> X
-    X --> W
-    W --> V
-    V --> U
-    end
+stateDiagram-v2
+    state Mamá {
+        [*] --> Gestionar
+        Gestionar --> AccederAlSistema
+        VerFaltantes --> EditarFaltantes
+        EditarFaltantes --> GestionarPrecios
+        GestionarPrecios --> Comprar/QuitarFaltantes
+        Comprar/QuitarFaltantes --> [*]
+
+    }
+    state Hijo {
+        AccederAlSistema --> AgregarProductoAlProg
+        AgregarProductoAlProg --> CrearListaFaltantes
+        CrearListaFaltantes --> VerFaltantes
+    }
 ```
 
 ### [Descripción del Proceso](#contenido)
@@ -303,7 +299,7 @@ Teniendo en cuenta los resultados de las entrevistas se detectó que los usuario
 
 ### Calendario del proyecto – Diagrama de Gantt
 
-Falta
+Falta.
 
 ## [Marco de desarrollo](#contenido)
 
@@ -610,9 +606,90 @@ class  Madre{
 
 ### [Modelo del Análisis](#contenido)
 
-#### Diagramas de Secuencias del Sistema
+Falta.
 
-Falta
+### Diagramas de Secuencias del Sistema
+
+Acceder al Sistema
+```mermaid
+sequenceDiagram
+    Actor A as Mamá/Hijo
+    A->>+Lista de Compras: login()
+    A->>+Lista de Compras: accesoAlSistema(usuario,contraseña)
+    Lista de Compras-->>-A: "Usuario Autenticado con Éxito"
+    Lista de Compras-->>-A: Fin login()
+```
+
+Agregar Producto al Prog
+```mermaid
+sequenceDiagram
+    Actor A as Mamá/Hijo
+    A->>+Lista de Compras: producto()
+    A->>+Lista de Compras: agregarProducto(marca, tipo, detalles)
+    Lista de Compras-->>-A: "Producto Agregado con Éxito"
+    Lista de Compras-->>-A: Fin producto()
+```
+
+Crear Lista de Faltantes
+```mermaid
+sequenceDiagram
+    Actor A as Mamá/Hijo
+    A->>+Lista de Compras: listaCompras()
+    A->>+Lista de Compras: agregarProductoAListaCompras(Producto)
+    Lista de Compras-->>-A: "Lista Actualizada con Éxito"
+    Lista de Compras-->>-A: Fin listaCompras()
+```
+
+Ver Lista de Faltantes
+```mermaid
+sequenceDiagram
+    Actor A as Mamá/Hijo
+    A->>+Lista de Compras: listaCompras()
+    A->>+Lista de Compras: verListaCompras()
+    Lista de Compras-->>-A: <ListaCompras>
+    Lista de Compras-->>-A: Fin listaCompras()
+```
+
+Gestionar Acceso
+```mermaid
+sequenceDiagram
+    Actor Mamá
+    Mamá->>+Lista de Compras: gestionarAcceso()
+    Mamá->>+Lista de Compras: credenciales(nombre, clave)
+    Lista de Compras-->>-Mamá: "Usuario Actualizado con Éxito"
+    Lista de Compras-->>-Mamá: Fin gestionarAcceso()
+```
+
+Editar Faltantes
+```mermaid
+sequenceDiagram
+    Actor A as Mamá
+    A->>+Lista de Compras: listaCompras()
+    A->>+Lista de Compras: editarListaCompras(Lista <Productos>)
+    Lista de Compras-->>-A: "Lista Actualizada con Éxito"
+    Lista de Compras-->>-A: Fin listaCompras()
+```
+
+Gestionar Precios
+```mermaid
+sequenceDiagram
+    Actor A as Mamá/Hijo
+    A->>+Lista de Compras: precios()
+    A->>+Lista de Compras: gestionarPrecios(Producto, precio)
+    Lista de Compras-->>-A: "Precio Actualizado con Éxito"
+    Lista de Compras-->>-A: Fin precios()
+```
+
+Quitar Faltantes
+```mermaid
+sequenceDiagram
+    Actor A as Mamá/Hijo
+    A->>+Lista de Compras: listaCompras()
+    A->>+Lista de Compras: quitarFaltantes(Lista <Productos>)
+    Lista de Compras-->>-A: "Lista Reiniciada con Éxito"
+    Lista de Compras-->>-A: Fin listaCompras()
+```
+
 
 ### [Contratos](#contenido)
 
@@ -660,4 +737,4 @@ POSTCONDICIONES: se creó una instancia de RegistroCompras.
 
 ### [Prototipos No Operacionales](#contenido)
 
-Falta
+Falta.
