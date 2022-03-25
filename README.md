@@ -594,14 +594,21 @@ class  Usuario{
 }
 class  Hijo{
 +int id_usu
-+AgregarFaltantes()
++AccederAlSistema()
++AgregarNuevoProducto()
++AgregarAListaCompras()
 +VerFaltantes()
 }
 class  Madre{
 +int id_usu
-+VerFaltantes()
-+EditarFaltantes()
-+ComprarFaltantes()
++GestionarAcceso()
++AccederAlSistema()
++AgregarProducto()
++AgregarAListaCompras()
++VerListaCompras()
++EditarListaCompras()
++GestionarPrecios()
++QuitarListaCompras()
 }
 ```
 
@@ -617,86 +624,86 @@ Acceder al Sistema
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
-    A->>+Lista de Compras: login()
-    A->>+Lista de Compras: accesoAlSistema(usuario,contraseña)
+    A->>+Lista de Compras: Login()
+    A->>+Lista de Compras: AccederAlSistema(usuario,contraseña)
     Lista de Compras-->>-A: "Usuario Autenticado con Éxito"
-    Lista de Compras-->>-A: Fin login()
+    Lista de Compras-->>-A: Fin Login()
 ```
 
 Agregar Producto al Prog
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
-    A->>+Lista de Compras: producto()
+    A->>+Lista de Compras: Producto()
     A->>+Lista de Compras: agregarProducto(marca, tipo, detalles)
     Lista de Compras-->>-A: "Producto Agregado con Éxito"
-    Lista de Compras-->>-A: Fin producto()
+    Lista de Compras-->>-A: Fin Producto()
 ```
 
 Crear Lista de Faltantes
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
-    A->>+Lista de Compras: listaCompras()
-    A->>+Lista de Compras: agregarProductoAListaCompras(Producto)
+    A->>+Lista de Compras: ListaCompras()
+    A->>+Lista de Compras: agregarAListaCompras(Producto)
     Lista de Compras-->>-A: "Lista Actualizada con Éxito"
-    Lista de Compras-->>-A: Fin listaCompras()
+    Lista de Compras-->>-A: Fin ListaCompras()
 ```
 
 Ver Lista de Faltantes
 ```mermaid
 sequenceDiagram
     Actor A as Mamá/Hijo
-    A->>+Lista de Compras: listaCompras()
+    A->>+Lista de Compras: ListaCompras()
     A->>+Lista de Compras: verListaCompras()
     Lista de Compras-->>-A: <ListaCompras>
-    Lista de Compras-->>-A: Fin listaCompras()
+    Lista de Compras-->>-A: Fin ListaCompras()
 ```
 
 Gestionar Acceso
 ```mermaid
 sequenceDiagram
     Actor Mamá
-    Mamá->>+Lista de Compras: gestionarAcceso()
-    Mamá->>+Lista de Compras: credenciales(nombre, clave)
+    Mamá->>+Lista de Compras: Usuario()
+    Mamá->>+Lista de Compras: gestionarAcceso(nombre, clave)
     Lista de Compras-->>-Mamá: "Usuario Actualizado con Éxito"
-    Lista de Compras-->>-Mamá: Fin gestionarAcceso()
+    Lista de Compras-->>-Mamá: Fin Usuario()
 ```
 
 Editar Faltantes
 ```mermaid
 sequenceDiagram
     Actor A as Mamá
-    A->>+Lista de Compras: listaCompras()
+    A->>+Lista de Compras: ListaCompras()
     A->>+Lista de Compras: editarListaCompras(Lista <Productos>)
     Lista de Compras-->>-A: "Lista Actualizada con Éxito"
-    Lista de Compras-->>-A: Fin listaCompras()
+    Lista de Compras-->>-A: Fin ListaCompras()
 ```
 
 Gestionar Precios
 ```mermaid
 sequenceDiagram
     Actor A as Mamá
-    A->>+Lista de Compras: precios()
-    A->>+Lista de Compras: gestionarPrecios(Producto, precio)
+    A->>+Lista de Compras: Precio()
+    A->>+Lista de Compras: gestionarPrecio(Producto, precio)
     Lista de Compras-->>-A: "Precio Actualizado con Éxito"
-    Lista de Compras-->>-A: Fin precios()
+    Lista de Compras-->>-A: Fin Precio()
 ```
 
 Quitar Faltantes
 ```mermaid
 sequenceDiagram
     Actor A as Mamá
-    A->>+Lista de Compras: listaCompras()
-    A->>+Lista de Compras: quitarFaltantes(Lista <Productos>)
+    A->>+Lista de Compras: ListaCompras()
+    A->>+Lista de Compras: quitarListaCompras(Lista <Productos>)
     Lista de Compras-->>-A: "Lista Reiniciada con Éxito"
-    Lista de Compras-->>-A: Fin listaCompras()
+    Lista de Compras-->>-A: Fin ListaCompras()
 ```
 
 
 ### [Contratos](#contenido)
 
-OPERACIÓN: **accesoAlSistema(usuario,contraseña).**
+OPERACIÓN: **AccederAlSistema(usuario,contraseña).**
 REFERENCIAS CRUZADAS: caso de uso Acceder al Sistema
 PRECONDICIONES: El sistema espera que Hijo inicie sesión con los datos provistos por Mamá.
 POSTCONDICIONES: se creó una instancia de Usuario.
